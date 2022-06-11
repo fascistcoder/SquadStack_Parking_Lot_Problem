@@ -43,7 +43,13 @@ public class ParkingSlotServiceImpl implements ParkingLotService {
 
 		if (car.getAge() < 18) {
 			System.out.println("Minimum age required 18 to park the car as per Government Guidelines");
-		} else {
+		}
+
+		if(car.getRegistrationNo().length() < 13){
+			System.out.println("Registration Number is not Valid");
+		}
+
+		else {
 			ArrayList<Integer> totalSlotsLeftInParkingLot = slotsLeftInParkingLot;
 
 			if (totalSlotsLeftInParkingLot.isEmpty()) {

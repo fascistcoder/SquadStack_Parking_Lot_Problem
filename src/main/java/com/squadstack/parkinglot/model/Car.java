@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Size;
 
@@ -19,6 +20,8 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @Builder
 public class Car {
+
+	@Size(min = 13, max = 13)
 	private String registrationNo;
 
 	@Size(min = 18, message = "Minimum age required 18 to park the car as per Government Guidelines")
