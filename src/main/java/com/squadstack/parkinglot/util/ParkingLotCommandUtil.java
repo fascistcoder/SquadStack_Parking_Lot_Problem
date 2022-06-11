@@ -23,36 +23,34 @@ public class ParkingLotCommandUtil {
 		String key = inputs[0];
 		int age;
 
-		switch (key) {
-			case Constants.CREATE_PARKING_LOT -> {
+			switch (key) {
+			case Constants.CREATE_PARKING_LOT:
 				int capacity = Integer.parseInt(inputs[1]);
 				parkingLotService.createParkingLot(capacity);
-			}
-
-			case Constants.PARK -> {
+				break;
+			case Constants.PARK:
 				age = Integer.parseInt(inputs[3]);
 				String registrationNo = inputs[1];
 				parkingLotService.park(new Car(registrationNo, age));
-			}
-
-			case Constants.LEAVE -> {
+				break;
+			case Constants.LEAVE:
 				int slotNumber = Integer.parseInt(inputs[1]);
 				parkingLotService.leave(slotNumber);
-			}
-
-			case Constants.REG_NUMBER_FOR_CARS_WITH_AGE -> {
+				break;
+			case Constants.REG_NUMBER_FOR_CARS_WITH_AGE:
 				age = Integer.parseInt(inputs[1]);
 				parkingLotService.getRegistrationNoForAge(age);
-			}
-
-			case Constants.SLOTS_NUMBER_FOR_CARS_WITH_AGE -> {
+				break;
+			case Constants.SLOTS_NUMBER_FOR_CARS_WITH_AGE:
 				age = Integer.parseInt(inputs[1]);
 				parkingLotService.getSlotNumbersFromAge(age);
-			}
-
-			case Constants.SLOTS_NUMBER_FOR_REG_NUMBER -> parkingLotService.getSlotNoFromRegistrationNo(inputs[1]);
-
-			default -> System.out.println("Input Command is Wrong");
+				break;
+			case Constants.SLOTS_NUMBER_FOR_REG_NUMBER:
+				parkingLotService.getSlotNoFromRegistrationNo(inputs[1]);
+				break;
+			default:
+				System.out.println("Input Command is Wrong");
+				break;
 		}
 	}
 
