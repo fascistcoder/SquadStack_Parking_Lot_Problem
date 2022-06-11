@@ -21,8 +21,6 @@ public class ParkingLotCommandUtil {
 
 		String[] inputs = input.split(" ");
 		String key = inputs[0];
-
-		@Size(min = 18, message = "Minimum age required 18 to park the car as per Government Guidelines")
 		int age;
 
 		switch (key) {

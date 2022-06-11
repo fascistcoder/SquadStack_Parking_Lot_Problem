@@ -41,20 +41,25 @@ public class ParkingSlotServiceImpl implements ParkingLotService {
 
 	@Override public void park(Car car) {
 
-		ArrayList<Integer> totalSlotsLeftInParkingLot = slotsLeftInParkingLot;
-
-		if (totalSlotsLeftInParkingLot.isEmpty()) {
-			System.out.println("Parking Lot is full, Sorry for the inconvenience");
+		if (car.getAge() < 18) {
+			System.out.println("Minimum age required 18 to park the car as per Government Guidelines");
 		} else {
-			Integer parkingSlot = totalSlotsLeftInParkingLot.get(0);
+			ArrayList<Integer> totalSlotsLeftInParkingLot = slotsLeftInParkingLot;
 
-			if (totalSlotsLeftInParkingLot.size() <= slotAllottedInParkingLot) {
-				parkingLot.put(parkingSlot, car);
+			if (totalSlotsLeftInParkingLot.isEmpty()) {
+				System.out.println("Parking Lot is full, Sorry for the inconvenience");
+			} else {
+				Integer parkingSlot = totalSlotsLeftInParkingLot.get(0);
+
+				if (totalSlotsLeftInParkingLot.size() <= slotAllottedInParkingLot) {
+					parkingLot.put(parkingSlot, car);
+				}
+
+				System.out.println("Car with vehicle registration number " + car.getRegistrationNo() + " has been parked at slot number " + parkingSlot);
+				totalSlotsLeftInParkingLot.remove(0);
 			}
-
-			System.out.println("Car with vehicle registration number " + car.getRegistrationNo() + " has been parked at slot number " + parkingSlot);
-			totalSlotsLeftInParkingLot.remove(0);
 		}
+
 	}
 
 	@Override public void leave(int slotNumber) {
@@ -93,7 +98,7 @@ public class ParkingSlotServiceImpl implements ParkingLotService {
 			}
 		}
 
-		if(!flag){
+		if (!flag) {
 			System.out.println("Car Not found In parking lot");
 		}
 
