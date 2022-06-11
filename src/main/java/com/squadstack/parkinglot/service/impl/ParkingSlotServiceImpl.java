@@ -58,7 +58,13 @@ public class ParkingSlotServiceImpl implements ParkingLotService {
 				Integer parkingSlot = totalSlotsLeftInParkingLot.get(0);
 
 				if (totalSlotsLeftInParkingLot.size() <= slotAllottedInParkingLot) {
-					parkingLot.put(parkingSlot, car);
+
+					if(parkingLot.containsValue(car)){
+						System.out.println("Car already present with registrationNo " + car.getRegistrationNo());
+					}else{
+						parkingLot.put(parkingSlot, car);
+					}
+
 				}
 
 				System.out.println("Car with vehicle registration number " + car.getRegistrationNo() + " has been parked at slot number " + parkingSlot);
