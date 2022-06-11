@@ -45,3 +45,5 @@ Points
 2. Slot no and car will be store in hashmap because unique slot no for every car.
 3. Same registration car is not allowed again
 4. Handle Common exception in main class only.
+
+Test cases is pending for now, due to time constraint will complete next month.
