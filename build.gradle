@@ -6,7 +6,11 @@ plugins {
 
 group = 'com.squadstack'
 version = '0.0.1-SNAPSHOT'
+<<<<<<< HEAD
 sourceCompatibility = '11'
+=======
+sourceCompatibility = '17'
+>>>>>>> e155e9a9c2f7c49beedf4af9a3e54b6cb72d3565
 
 configurations {
     compileOnly {
@@ -14,7 +18,10 @@ configurations {
     }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e155e9a9c2f7c49beedf4af9a3e54b6cb72d3565
 repositories {
     mavenCentral()
 }
