@@ -122,10 +122,10 @@ public class ParkingSlotServiceImpl implements ParkingLotService {
 		}
 
 		boolean flag = true;
-		Collection<Car> allCarsInParkingLo = parkingLot.values();
+		Collection<Car> allCarsInParkingLot = parkingLot.values();
 		List<String> slotNum = new ArrayList<>();
 
-		for (Car car : allCarsInParkingLo) {
+		for (Car car : allCarsInParkingLot) {
 			if (Objects.equals(car.getAge(), age)) {
 				for (Map.Entry<Integer, Car> entry : parkingLot.entrySet()) {
 					if (entry.getValue().equals(car)) {
